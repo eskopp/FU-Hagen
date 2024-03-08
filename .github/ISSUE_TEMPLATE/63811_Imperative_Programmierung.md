@@ -1,7 +1,7 @@
 ---
 name: Imperative Programmierung Issue
 about: Erstellen Sie ein Issue für Probleme oder Diskussionen bezogen auf imperative Programmierung.
-title: 63811_Imperative_Programmierung - "
+title: 63811_Imperative_Programmierung - 
 labels: Imperative_Programmierung
 assignees: eskopp
 

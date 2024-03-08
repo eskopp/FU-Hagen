@@ -1,7 +1,7 @@
 ---
 name: Allgemeines Problem
 about: Verwenden Sie dieses Template für allgemeine Probleme oder Anfragen.
-title: "[ALLGEMEIN] - "
+title: "ALLGEMEIN - "
 labels: Allgemein
 assignees: eskopp
 
