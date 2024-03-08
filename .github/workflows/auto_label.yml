@@ -15,7 +15,7 @@ jobs:
 
       - name: Label and Assign for 63811_Imperative_Programmierung
         if: github.event.pull_request.head.ref == '63811_Imperative_Programmierung'
-        uses: actions/github-script@v5
+        uses: actions/github-script@v7
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
@@ -34,7 +34,7 @@ jobs:
 
       - name: Label and Assign for 61111_Grundlagen_Mathematik
         if: github.event.pull_request.head.ref == '61111_Grundlagen_Mathematik'
-        uses: actions/github-script@v5
+        uses: actions/github-script@v7
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
