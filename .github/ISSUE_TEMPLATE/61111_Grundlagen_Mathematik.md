@@ -1,7 +1,7 @@
 ---
 name: Grundlagen Mathematik Issue
 about: Erstellen Sie ein Issue für Probleme oder Diskussionen bezogen auf Grundlagen der Mathematik.
-title: "61111_Grundlagen_Mathematik - 
+title: 61111_Grundlagen_Mathematik - 
 labels: Grundlagen_Mathematik
 assignees: eskopp
 
