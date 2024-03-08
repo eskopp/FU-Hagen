@@ -1,0 +1,52 @@
+name: Auto Label and Assign for Specific Branches
+
+on:
+  pull_request_target:
+    branches:
+      - main
+      - stable
+
+jobs:
+  auto-label-and-assign:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+
+      - name: Label and Assign for 63811_Imperative_Programmierung
+        if: github.event.pull_request.head.ref == '63811_Imperative_Programmierung'
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['imperative_Programmierung']
+            });
+            github.issues.addAssignees({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              assignees: ['eskopp']
+            });
+
+      - name: Label and Assign for 61111_Grundlagen_Mathematik
+        if: github.event.pull_request.head.ref == '61111_Grundlagen_Mathematik'
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['61111_Grundlagen_Mathematik']
+            });
+            github.issues.addAssignees({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              assignees: ['eskopp']
+            });
