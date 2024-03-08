@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Label and Assign for 63811_Imperative_Programmierung
         if: github.event.pull_request.head.ref == '63811_Imperative_Programmierung'
