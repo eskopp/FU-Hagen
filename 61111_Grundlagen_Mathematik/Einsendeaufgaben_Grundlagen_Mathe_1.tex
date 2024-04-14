@@ -1,0 +1,468 @@
+\documentclass[%
+    12pt,
+    a4paper,
+    ngerman,
+    headheight=29.1pt,
+]{scrartcl}
+
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=3.0cm, bottom=2.5cm]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[ngerman]{babel}
+\usepackage[headsepline]{scrlayer-scrpage}
+\usepackage[active]{srcltx}
+\usepackage{algorithm}
+\usepackage[noend]{algorithmic}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{listings}
+\usepackage{struktex}
+\usepackage{xcolor}
+
+\usepackage{hyperref} % <-- ALWAYS include me last!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% EDIT THIS PART %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\Fach}{Mathematische Grundlagen - 61111}
+\newcommand{\Name}{Erik Skopp}
+\newcommand{\Seminargruppe}{FU-Hagen}
+\newcommand{\Matrikelnummer}{3301729}
+\newcommand{\Semester}{SoSe 2024}
+\newcommand{\Uebungsblatt}{1} %  <-- UPDATE ME FOR EACH SHEET
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\parindent}{0em}
+
+%%%%%%%%%%%%%%%
+%% Aufgaben-COMMAND
+\newcommand{\Aufgabe}[1]{
+  {
+  \vspace*{0.5cm}
+  \textsf{\textbf{Aufgabe #1}}
+  \vspace*{0.2cm}
+  }
+}
+\newcommand{\Loesung}[1]{
+  {
+  \vspace*{0.5cm}
+  \textsf{\textbf{Lösung #1}}
+  \vspace*{0.2cm}
+  }
+}
+%%%%%%%%%%%%%%
+\hypersetup{
+    pdftitle={\Fach{}: Uebungsblatt \Uebungsblatt{}},
+    pdfauthor={\Name},
+    pdfborder={0 0 0}
+}
+
+\lstset{ %
+language=java,
+basicstyle=\footnotesize\ttfamily,
+showtabs=false,
+tabsize=2,
+captionpos=b,
+breaklines=true,
+extendedchars=true,
+showstringspaces=false,
+flexiblecolumns=true,
+}
+
+\title{FU-Haegen - \Fach{} - \Uebungsblatt{}}
+\author{\Name{}}
+
+\begin{document}
+\pagestyle{scrheadings}
+\lohead{\sffamily \Fach{} \\ \small \Name{} - \Matrikelnummer{}}
+\rohead{\sffamily \Semester{} \\   \Seminargruppe{}}
+\pagestyle{plain}
+\thispagestyle{scrheadings}
+\addtokomafont{pagehead}{\normalfont}
+\vspace*{0.2cm}
+\begin{center}
+\LARGE \sffamily \textbf{FU-Hagen - Mathematische Grundlagen - \Uebungsblatt{}}
+\end{center}
+\vspace*{0.2cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Insert your solutions here %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\Aufgabe{1.1}\\
+\begin{enumerate}
+    \item Seien \( A \), \( B \) und \( C \) Aussagen. Beweisen Sie, dass folgende Aussagen logisch äquivalent sind:
+    \begin{enumerate}
+        \item \( (A \land B) \Rightarrow C \) und \( (A \Rightarrow C) \lor (B \Rightarrow C) \) sind äquivalent.
+        \item \( (A \lor B) \Rightarrow C \) und \( (A \Rightarrow C) \land (B \Rightarrow C) \) sind äquivalent.
+    \end{enumerate}
+\end{enumerate}
+
+\Loesung{1.1} \\
+Um die logische Äquivalenz zu zeigen, betrachten wir die Wahrheitstabelle für beide Ausdrücke.
+
+\begin{enumerate}
+    \item[(a)] Um die logische Äquivalenz zu zeigen, betrachten wir die Wahrheitstabelle für beide Ausdrücke.
+    
+    Die Wahrheitstabelle für die beiden Ausdrücke lautet wie folgt:
+    
+    \[
+    \begin{array}{|c|c|c|c|c|}
+    \hline
+    A & B & C & (A \land B) \Rightarrow C & (A \Rightarrow C) \lor (B \Rightarrow C) \\
+    \hline
+    \hline
+    0 & 0 & 0 & 1 & 1 \\
+    0 & 0 & 1 & 1 & 1 \\
+    0 & 1 & 0 & 1 & 1 \\
+    0 & 1 & 1 & 1 & 1 \\
+    1 & 0 & 0 & 1 & 1 \\
+    1 & 0 & 1 & 0 & 1 \\
+    1 & 1 & 0 & 0 & 1 \\
+    1 & 1 & 1 & 1 & 1 \\
+    \hline
+    \end{array}
+    \]
+    
+    Aus der Wahrheitstabelle sehen wir, dass die Ausdrücke in beiden Spalten für alle möglichen Kombinationen von Wahrheitswerten von \( A \), \( B \) und \( C \) übereinstimmen. Daher sind die Ausdrücke logisch äquivalent.
+    
+    \item[(b)] Um die logische Äquivalenz zu zeigen, betrachten wir die Wahrheitstabelle für beide Ausdrücke.
+    
+    Die Wahrheitstabelle für die beiden Ausdrücke lautet wie folgt:
+    
+    \[
+    \begin{array}{|c|c|c|c|c|}
+    \hline
+    A & B & C & (A \lor B) \Rightarrow C & (A \Rightarrow C) \land (B \Rightarrow C) \\
+    \hline
+    \hline
+    0 & 0 & 0 & 1 & 1 \\
+    0 & 0 & 1 & 1 & 1 \\
+    0 & 1 & 0 & 1 & 1 \\
+    0 & 1 & 1 & 1 & 1 \\
+    1 & 0 & 0 & 1 & 1 \\
+    1 & 0 & 1 & 0 & 1 \\
+    1 & 1 & 0 & 0 & 1 \\
+    1 & 1 & 1 & 1 & 1 \\
+    \hline
+    \end{array}
+    \]
+    
+    Auch hier sehen wir, dass die Ausdrücke in beiden Spalten für alle möglichen Kombinationen von Wahrheitswerten von \( A \), \( B \) und \( C \) übereinstimmen. Daher sind die Ausdrücke logisch äquivalent.
+\end{enumerate}
+
+\Aufgabe{1.2} \\
+Beweisen Sie folgende Aussagen mit vollständiger Induktion:
+
+\begin{enumerate}
+    \item[(a)] Für alle \( n \in \mathbb{N} \) gilt:
+    \[
+    \sum_{k=1}^{n} \frac{1}{(2k-1)(2k+1)} = \frac{n}{2n+1}
+    \]
+
+    \item[(b)] Für alle \( n \in \mathbb{N} \) mit \( n \geq 2 \) gilt \( n^3 > n^2 + 1 \).
+\end{enumerate}
+
+\Loesung{1.2} \\
+\begin{enumerate}
+    \item[(a)] Vollständige Induktion für eine Summenformel
+    
+    \textbf{Behauptung:}
+    \[
+    \sum_{k=1}^{n} \frac{1}{(2k-1)(2k+1)} = \frac{n}{2n+1}
+    \]
+
+    \textbf{Beweis:}
+
+    \textit{Induktionsanfang:}
+    Setzen wir \(n=1\):
+    \[
+    \sum_{k=1}^{1} \frac{1}{(2k-1)(2k+1)} = \frac{1}{1 \cdot 3} = \frac{1}{3}
+    \]
+    Die rechte Seite der Gleichung gibt:
+    \[
+    \frac{1}{2 \cdot 1 + 1} = \frac{1}{3}
+    \]
+    Die Gleichung hält für \(n=1\).
+
+    \textit{Induktionsschritt:}
+    \[
+    \text{Induktionsvoraussetzung:} \quad \sum_{k=1}^{n} \frac{1}{(2k-1)(2k+1)} = \frac{n}{2n+1}
+    \]
+    \textit{Induktionsbehauptung:}
+    \[
+    \sum_{k=1}^{n+1} \frac{1}{(2k-1)(2k+1)} = \frac{n+1}{2(n+1)+1}
+    \]
+    \textit{Induktionsschluss:}
+    \[
+    \sum_{k=1}^{n+1} \frac{1}{(2k-1)(2k+1)} = \sum_{k=1}^{n} \frac{1}{(2k-1)(2k+1)} + \frac{1}{(2n+1)(2n+3)}
+    \]
+    \[
+    = \frac{n}{2n+1} + \frac{1}{(2n+1)(2n+3)}
+    \]
+    \[
+    = \frac{n(2n+3) + 1}{(2n+1)(2n+3)} = \frac{2n^2 + 3n + 1}{2n^2 + 5n + 3} = \frac{n+1}{2n+3}
+    \]
+    Die Induktion ist abgeschlossen.
+
+    \item[(b)] Nachweis einer Ungleichung
+    
+    \textbf{Behauptung:}
+    \[
+    n^3 > n^2 + 1 \quad \text{für alle } n \geq 2
+    \]
+
+    \textbf{Beweis:}
+
+    \textit{Induktionsanfang:}
+    Setzen wir \(n=2\):
+    \[
+    2^3 = 8 > 5 = 2^2 + 1
+    \]
+    Die Ungleichung hält für \(n=2\).
+
+    \textit{Induktionsschritt:}
+    \[
+    \text{Induktionsvoraussetzung:} \quad n^3 > n^2 + 1
+    \]
+    \[
+    \textit{Induktionsbehauptung:} \quad (n+1)^3 > (n+1)^2 + 1
+    \]
+    \textit{Induktionsschluss:}
+    \[
+    (n+1)^3 = n^3 + 3n^2 + 3n + 1 > n^2 + 1 + 3n^2 + 3n + 1
+    \]
+    \[
+    = 4n^2 + 3n + 2 > (n+1)^2 + 1 = n^2 + 2n + 1 + 1
+    \]
+    Da \(4n^2 + 3n + 2\) offensichtlich größer als \(n^2 + 2n + 2\) ist, ist die Induktion abgeschlossen.
+\end{enumerate}
+
+\Aufgabe{1.3}\\
+Bestimmen Sie alle Matrizen \( A \in M_{2 \times 2}(\mathbb{R}) \), für die gilt:
+\[
+A \begin{pmatrix}
+1 & 1 \\
+0 & 1
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 & 1 \\
+0 & 1
+\end{pmatrix}
+A
+\]
+\Loesung{1.3} \\
+Setzen wir \( A \) als eine allgemeine \( 2 \times 2 \)-Matrix:
+\[
+A = \begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+\]
+
+Multiplizieren wir \( A \) mit der gegebenen Matrix von rechts:
+\[
+A \begin{pmatrix}
+1 & 1 \\
+0 & 1
+\end{pmatrix}
+=
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+\begin{pmatrix}
+1 & 1 \\
+0 & 1
+\end{pmatrix}
+=
+\begin{pmatrix}
+a & a+b \\
+c & c+d
+\end{pmatrix}
+\]
+
+Und von links:
+\[
+\begin{pmatrix}
+1 & 1 \\
+0 & 1
+\end{pmatrix}
+A
+=
+\begin{pmatrix}
+1 & 1 \\
+0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+=
+\begin{pmatrix}
+a+c & b+d \\
+c & d
+\end{pmatrix}
+\]
+
+Setzen wir die beiden Resultate gleich:
+\[
+\begin{pmatrix}
+a & a+b \\
+c & c+d
+\end{pmatrix}
+=
+\begin{pmatrix}
+a+c & b+d \\
+c & d
+\end{pmatrix}
+\]
+
+Daraus ergeben sich die Gleichungen:
+\begin{align*}
+a &= a+c, \\
+a+b &= b+d, \\
+c &= c, \\
+c+d &= d.
+\end{align*}
+
+Diese Gleichungen vereinfachen sich zu:
+\begin{align*}
+c &= 0, \\
+b &= d.
+\end{align*}
+
+Die allgemeine Form der Matrix \( A \), die die gegebene Bedingung erfüllt, ist daher:
+\[
+A = \begin{pmatrix}
+a & b \\
+0 & b
+\end{pmatrix}
+\]
+
+\Aufgabe{1.4} \\
+Sei \( f : \mathbb{Z} \to \mathbb{Z} \) definiert durch \( f(z) = |z| \) für alle \( z \in \mathbb{Z} \). Dabei ist \( |z| = z \), falls \( z \geq 0 \), und \( |z| = -z \), falls \( z < 0 \).
+
+\begin{enumerate}
+    \item[(a)] Untersuchen Sie, ob \( f \) surjektiv beziehungsweise injektiv ist.
+    \item[(b)] Sei \( U = \{-3, -2, -1, 0, 1, 2, 3\} \). Bestimmen Sie \( f(U) := \{ f(u) | u \in U \} \), und bestimmen Sie die Menge der Urbilder der Elemente in \( f(U) \).
+    \item[(c)] Sei \( V = \{-10, -5, 0, 10, 15\} \). Sei \( W \) die Menge der Urbilder der Elemente in \( V \) unter \( f \). Bestimmen Sie die Elemente in \( W \) und in \( f(W) := \{ f(w) | w \in W \} \).
+\end{enumerate}
+
+\Loesung{1.4}\\
+\begin{itemize}
+    \item[(a)] Untersuchung auf Injektivität und Surjektivität
+    
+    \textbf{Injektivität:}
+    Eine Funktion ist injektiv, wenn unterschiedliche Elemente des Definitionsbereichs auf unterschiedliche Elemente des Wertebereichs abgebildet werden. Für \( f \), da \( f(-1) = f(1) = 1 \), ist \( f \) nicht injektiv.
+    
+    \textbf{Surjektivität:}
+    Eine Funktion ist surjektiv, wenn jeder Wert des Wertebereichs mindestens einmal als Funktionswert vorkommt. Da jeder nichtnegative ganze Wert \( y \) in \( \mathbb{Z} \) als \( f(y) \) oder \( f(-y) \) auftritt, ist \( f \) surjektiv.
+
+    \item[(b)] Bestimmung von \( f(U) \) und Urbildern
+    
+    \textbf{Gegeben:} \( U = \{-3, -2, -1, 0, 1, 2, 3\} \)
+    
+    \textbf{Berechnung von \( f(U) \):}
+    \[
+    f(U) = \{ |u| \,|\, u \in U \} = \{0, 1, 2, 3\}
+    \]
+    
+    \textbf{Bestimmung der Urbilder:}
+    \begin{itemize}
+        \item \( f^{-1}(\{0\}) = \{0\} \)
+        \item \( f^{-1}(\{1\}) = \{-1, 1\} \)
+        \item \( f^{-1}(\{2\}) = \{-2, 2\} \)
+        \item \( f^{-1}(\{3\}) = \{-3, 3\} \)
+    \end{itemize}
+
+    \item[(c)]Bestimmung von \( W \) und \( f(W) \)
+    
+    \textbf{Gegeben:} \( V = \{-10, -5, 0, 10, 15\} \)
+    
+    \textbf{Bestimmung von \( W \):}
+    \[
+    W = f^{-1}(V) = \{-15, -10, -5, 0, 5, 10, 15\}
+    \]
+    
+    \textbf{Berechnung von \( f(W) \):}
+    \[
+    f(W) = \{ |w| \,|\, w \in W \} = \{0, 5, 10, 15\}
+    \]
+\end{itemize}
+
+
+\Aufgabe{1.5} \\
+Seien \( f : X \rightarrow Y \) und \( g : Y \rightarrow Z \) Abbildungen.
+
+\begin{enumerate}
+    \item[(a)] Zeigen Sie: Ist \( g \circ f \) injektiv, dann ist \( f \) injektiv.
+    \item[(b)] Geben Sie ein Beispiel für Mengen \( X, Y, Z \) und Abbildungen \( f : X \rightarrow Y \) und \( g : Y \rightarrow Z \), so dass \( g \circ f \) injektiv und \( g \) nicht injektiv ist.
+    \item[(c)] Zeigen Sie: Ist \( g \circ f \) surjektiv, dann ist \( g \) surjektiv.
+    \item[(d)] Geben Sie ein Beispiel für Mengen \( X, Y, Z \) und Abbildungen \( f : X \rightarrow Y \) und \( g : Y \rightarrow Z \), so dass \( g \circ f \) surjektiv und \( f \) nicht surjektiv ist.
+\end{enumerate}
+
+\Loesung{1.5}\\
+\begin{itemize}
+    \item[(a)] \textbf{Injektivität von \( g \circ f \)}
+    
+    \textbf{Behauptung:}
+    Ist \( g \circ f \) injektiv, dann ist \( f \) injektiv.
+
+    \textbf{Beweis:}
+    Angenommen, \( g \circ f \) ist injektiv. Nehmen wir weiter an, dass \( f(x_1) = f(x_2) \) für \( x_1, x_2 \in X \). Dann gilt:
+    \[
+    g(f(x_1)) = g(f(x_2))
+    \]
+    Da \( g \circ f \) injektiv ist, folgt \( x_1 = x_2 \). Also ist \( f \) injektiv.
+
+    \item[(b)] \textbf{Beispiel für injektive \( g \circ f \) und nicht injektive \( g \)}
+    
+    \textbf{Beispiel:}
+    Setzen wir \( X = Y = Z = \mathbb{R} \), \( f(x) = x^2 \) und \( g(y) = \sqrt{y} \) auf \( Y = [0, \infty) \). Hier ist \( g \circ f(x) = |x| \), welches injektiv über \( X = [0, \infty) \) ist, aber \( g(y) = \sqrt{y} \) ist nicht injektiv über \( \mathbb{R} \) wegen \( g(-1) \neq g(1) \) aber \( \sqrt{1} = \sqrt{1} \).
+
+    \item[(c)] \textbf{Surjektivität von \( g \circ f \)}
+    
+    \textbf{Behauptung:}
+    Ist \( g \circ f \) surjektiv, dann ist \( g \) surjektiv.
+
+    \textbf{Beweis:}
+    Angenommen, \( g \circ f \) ist surjektiv. Dann gibt es zu jedem \( z \in Z \) ein \( x \in X \), so dass \( g(f(x)) = z \). Setzen wir \( y = f(x) \), existiert für jedes \( z \) ein \( y \in Y \), sodass \( g(y) = z \). Folglich ist \( g \) surjektiv.
+\end{itemize}
+
+\Aufgabe{1.6} \\
+Sei \( K \) ein Körper, und sei \( A \in M_{n \times n}(K) \) eine Matrix, sodass \( AB = BA \) für alle \( B \in M_{n \times n}(K) \) gilt. Beweisen Sie, dass das genau dann der Fall ist, wenn \( A = aI_n \) für ein \( a \in K \) gilt.
+
+\Loesung{1.6}\\
+\begin{itemize}
+    \item \textbf{Behauptung:}
+    Beweisen Sie, dass das genau dann der Fall ist, wenn \( A = aI_n \) für ein \( a \in K \) gilt.
+    
+    \item \textbf{Beweis:}
+    Wir zeigen, dass wenn \( A \) mit jeder Matrix \( B \) in \( M_{n \times n}(K) \) kommutiert, \( A \) ein skalares Vielfaches der Einheitsmatrix sein muss.
+
+    Da \( A \) mit jeder Matrix \( B \) kommutiert, betrachten wir insbesondere die Kommutierung mit den Matrizen \( E_{ij} \) (die Matrizen mit einer 1 an der Stelle \( (i, j) \) und 0 sonst). Für alle \( i \neq j \), gilt:
+    \[
+    AE_{ij} = E_{ij}A
+    \]
+    Dies impliziert, dass \( A \) auf der Diagonalen konstant sein muss und außerhalb der Diagonalen Nullen haben muss. Betrachten wir speziell \( B = E_{ii} \) und \( B = E_{jj} \) für \( i \neq j \), sehen wir, dass alle Diagonalelemente gleich sein müssen:
+    \[
+    AE_{ii} = E_{ii}A \quad \text{und} \quad AE_{jj} = E_{jj}A
+    \]
+    Daraus folgt, dass \( A = aI_n \) für ein \( a \in K \), weil dies die einzige Form ist, die mit jeder möglichen \( B \) kommutiert.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
