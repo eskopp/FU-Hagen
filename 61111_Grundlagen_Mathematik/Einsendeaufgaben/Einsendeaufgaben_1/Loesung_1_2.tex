@@ -1,0 +1,73 @@
+\begin{enumerate}
+    \item[(a)] Vollständige Induktion für eine Summenformel
+    
+    \textbf{Behauptung:}
+    \[
+    \sum_{k=1}^{n} \frac{1}{(2k-1)(2k+1)} = \frac{n}{2n+1}
+    \]
+
+    \textbf{Beweis:}
+
+    \textit{Induktionsanfang:}
+    Setzen wir \(n=1\):
+    \[
+    \sum_{k=1}^{1} \frac{1}{(2k-1)(2k+1)} = \frac{1}{1 \cdot 3} = \frac{1}{3}
+    \]
+    Die rechte Seite der Gleichung gibt:
+    \[
+    \frac{1}{2 \cdot 1 + 1} = \frac{1}{3}
+    \]
+    Die Gleichung hält für \(n=1\).
+
+    \textit{Induktionsschritt:}
+    \[
+    \text{Induktionsvoraussetzung:} \quad \sum_{k=1}^{n} \frac{1}{(2k-1)(2k+1)} = \frac{n}{2n+1}
+    \]
+    \textit{Induktionsbehauptung:}
+    \[
+    \sum_{k=1}^{n+1} \frac{1}{(2k-1)(2k+1)} = \frac{n+1}{2(n+1)+1}
+    \]
+    \textit{Induktionsschluss:}
+    \[
+    \sum_{k=1}^{n+1} \frac{1}{(2k-1)(2k+1)} = \sum_{k=1}^{n} \frac{1}{(2k-1)(2k+1)} + \frac{1}{(2n+1)(2n+3)}
+    \]
+    \[
+    = \frac{n}{2n+1} + \frac{1}{(2n+1)(2n+3)}
+    \]
+    \[
+    = \frac{n(2n+3) + 1}{(2n+1)(2n+3)} = \frac{2n^2 + 3n + 1}{2n^2 + 5n + 3} = \frac{n+1}{2n+3}
+    \]
+    Die Induktion ist abgeschlossen.
+
+    \item[(b)] Nachweis einer Ungleichung
+    
+    \textbf{Behauptung:}
+    \[
+    n^3 > n^2 + 1 \quad \text{für alle } n \geq 2
+    \]
+
+    \textbf{Beweis:}
+
+    \textit{Induktionsanfang:}
+    Setzen wir \(n=2\):
+    \[
+    2^3 = 8 > 5 = 2^2 + 1
+    \]
+    Die Ungleichung hält für \(n=2\).
+
+    \textit{Induktionsschritt:}
+    \[
+    \text{Induktionsvoraussetzung:} \quad n^3 > n^2 + 1
+    \]
+    \[
+    \textit{Induktionsbehauptung:} \quad (n+1)^3 > (n+1)^2 + 1
+    \]
+    \textit{Induktionsschluss:}
+    \[
+    (n+1)^3 = n^3 + 3n^2 + 3n + 1 > n^2 + 1 + 3n^2 + 3n + 1
+    \]
+    \[
+    = 4n^2 + 3n + 2 > (n+1)^2 + 1 = n^2 + 2n + 1 + 1
+    \]
+    Da \(4n^2 + 3n + 2\) offensichtlich größer als \(n^2 + 2n + 2\) ist, ist die Induktion abgeschlossen.
+\end{enumerate}

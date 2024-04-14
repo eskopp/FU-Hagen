@@ -1,0 +1,87 @@
+Setzen wir \( A \) als eine allgemeine \( 2 \times 2 \)-Matrix:
+\[
+A = \begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+\]
+
+Multiplizieren wir \( A \) mit der gegebenen Matrix von rechts:
+\[
+A \begin{pmatrix}
+1 & 1 \\
+0 & 1
+\end{pmatrix}
+=
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+\begin{pmatrix}
+1 & 1 \\
+0 & 1
+\end{pmatrix}
+=
+\begin{pmatrix}
+a & a+b \\
+c & c+d
+\end{pmatrix}
+\]
+
+Und von links:
+\[
+\begin{pmatrix}
+1 & 1 \\
+0 & 1
+\end{pmatrix}
+A
+=
+\begin{pmatrix}
+1 & 1 \\
+0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+a & b \\
+c & d
+\end{pmatrix}
+=
+\begin{pmatrix}
+a+c & b+d \\
+c & d
+\end{pmatrix}
+\]
+
+Setzen wir die beiden Resultate gleich:
+\[
+\begin{pmatrix}
+a & a+b \\
+c & c+d
+\end{pmatrix}
+=
+\begin{pmatrix}
+a+c & b+d \\
+c & d
+\end{pmatrix}
+\]
+
+Daraus ergeben sich die Gleichungen:
+\begin{align*}
+a &= a+c, \\
+a+b &= b+d, \\
+c &= c, \\
+c+d &= d.
+\end{align*}
+
+Diese Gleichungen vereinfachen sich zu:
+\begin{align*}
+c &= 0, \\
+b &= d.
+\end{align*}
+
+Die allgemeine Form der Matrix \( A \), die die gegebene Bedingung erfüllt, ist daher:
+\[
+A = \begin{pmatrix}
+a & b \\
+0 & b
+\end{pmatrix}
+\]

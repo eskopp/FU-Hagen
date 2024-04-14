@@ -1,0 +1,17 @@
+\begin{itemize}
+    \item \textbf{Behauptung:}
+    Beweisen Sie, dass das genau dann der Fall ist, wenn \( A = aI_n \) für ein \( a \in K \) gilt.
+    
+    \item \textbf{Beweis:}
+    Wir zeigen, dass wenn \( A \) mit jeder Matrix \( B \) in \( M_{n \times n}(K) \) kommutiert, \( A \) ein skalares Vielfaches der Einheitsmatrix sein muss.
+
+    Da \( A \) mit jeder Matrix \( B \) kommutiert, betrachten wir insbesondere die Kommutierung mit den Matrizen \( E_{ij} \) (die Matrizen mit einer 1 an der Stelle \( (i, j) \) und 0 sonst). Für alle \( i \neq j \), gilt:
+    \[
+    AE_{ij} = E_{ij}A
+    \]
+    Dies impliziert, dass \( A \) auf der Diagonalen konstant sein muss und außerhalb der Diagonalen Nullen haben muss. Betrachten wir speziell \( B = E_{ii} \) und \( B = E_{jj} \) für \( i \neq j \), sehen wir, dass alle Diagonalelemente gleich sein müssen:
+    \[
+    AE_{ii} = E_{ii}A \quad \text{und} \quad AE_{jj} = E_{jj}A
+    \]
+    Daraus folgt, dass \( A = aI_n \) für ein \( a \in K \), weil dies die einzige Form ist, die mit jeder möglichen \( B \) kommutiert.
+\end{itemize}

@@ -1,0 +1,26 @@
+\begin{itemize}
+    \item[(a)] \textbf{Injektivität von \( g \circ f \)}
+    
+    \textbf{Behauptung:}
+    Ist \( g \circ f \) injektiv, dann ist \( f \) injektiv.
+
+    \textbf{Beweis:}
+    Angenommen, \( g \circ f \) ist injektiv. Nehmen wir weiter an, dass \( f(x_1) = f(x_2) \) für \( x_1, x_2 \in X \). Dann gilt:
+    \[
+    g(f(x_1)) = g(f(x_2))
+    \]
+    Da \( g \circ f \) injektiv ist, folgt \( x_1 = x_2 \). Also ist \( f \) injektiv.
+
+    \item[(b)] \textbf{Beispiel für injektive \( g \circ f \) und nicht injektive \( g \)}
+    
+    \textbf{Beispiel:}
+    Setzen wir \( X = Y = Z = \mathbb{R} \), \( f(x) = x^2 \) und \( g(y) = \sqrt{y} \) auf \( Y = [0, \infty) \). Hier ist \( g \circ f(x) = |x| \), welches injektiv über \( X = [0, \infty) \) ist, aber \( g(y) = \sqrt{y} \) ist nicht injektiv über \( \mathbb{R} \) wegen \( g(-1) \neq g(1) \) aber \( \sqrt{1} = \sqrt{1} \).
+
+    \item[(c)] \textbf{Surjektivität von \( g \circ f \)}
+    
+    \textbf{Behauptung:}
+    Ist \( g \circ f \) surjektiv, dann ist \( g \) surjektiv.
+
+    \textbf{Beweis:}
+    Angenommen, \( g \circ f \) ist surjektiv. Dann gibt es zu jedem \( z \in Z \) ein \( x \in X \), so dass \( g(f(x)) = z \). Setzen wir \( y = f(x) \), existiert für jedes \( z \) ein \( y \in Y \), sodass \( g(y) = z \). Folglich ist \( g \) surjektiv.
+\end{itemize}
