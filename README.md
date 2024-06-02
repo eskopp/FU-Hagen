@@ -1,3 +1,10 @@
+> [!CAUTION]
+> Dieses Repository wird nicht mehr weitergeführt und ist nur noch im Lesemodus verfügbar. Es werden keine weiteren Updates oder Änderungen mehr vorgenommen. Bitte nutzen Sie den vorhandenen Code nur zum Lesen oder für Archivzwecke.
+
+
+
+
+
 # FU - Hagen
 
 
